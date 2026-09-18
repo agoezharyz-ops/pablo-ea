@@ -1,0 +1,103 @@
+; ============================================================
+;  PRESET v2.21.3-TAHAP-PROFIT
+;  IDE: buka basket BERTAHAP, begitu floating PROFIT -> CLOSE SEMUA.
+;        Tidak perlu menunggu layer maksimal (20).
+;
+;  Cara kerja:
+;   1. Basket baru dibuka HANYA saat flat (InpHanyaJikaKosong=true)
+;   2. Layer ditambah bertahap (jarak 1.20, 1 layer/tick)
+;   3. Begitu floating total >= +$2  -> CLOSE SEMUA (basket TP)
+;   4. Kalau rugi total <= -$6       -> CLOSE SEMUA (basket CL)
+;   5. TP per-posisi & SL per-posisi DIMATIKAN (biar tidak close satuan
+;      lebih dulu; semua keputusan di level BASKET)
+;
+;  Max 20 layer = pagar darurat, bukan target.
+;  Lot FLAT 0.01 (bukan martingale).
+;  Butuh EA: PabloLayerEA_v2.21.3-arah.mq5
+; ============================================================
+InpLotAwal=0.01
+InpLotCustom=0.00
+InpMaxLayer=20
+InpMaxLot=0.01
+InpJarakLayer=1.20
+InpAktifBuy=true
+InpAktifSell=true
+InpHanyaJikaKosong=true
+InpNoHedge=false
+InpTPAdaptif=false
+InpTPMin=1.00
+InpTPMax=3.00
+InpTPATRMult=1.00
+InpTakeProfit=0.0
+InpPakaiBasketTP=true
+InpBasketTPMoney=2.00
+InpStopLoss=0.0
+InpPakaiBasketCL=true
+InpBasketCLMoney=6.00
+InpPakaiEquityCL=true
+InpMaxEquityDD=12.0
+InpTargetHarian=0.0
+InpGunakanBEP=true
+InpBEPTrigger=1.0
+InpBEPLock=0.30
+InpGunakanTrailing=true
+InpTrailStart=1.5
+InpTrailStep=0.5
+InpGunakanEMAFilter=false
+InpEmaCepat=10
+InpEmaLambat=20
+InpTFEMA=1
+InpCandleTF=1
+InpCandleMin=0.02
+InpCandleMax=0.0
+InpCandleSkipNews=false
+InpShowLevel=true
+InpTampilkanGaris=true
+InpOneShotLadder=true
+InpTargetPersen=false
+InpPakaiJamLock=false
+InpPakaiChase=true
+InpChaseTrigger=2.0
+InpChaseMaxUlang=0
+InpPakaiRegime=true
+InpAdxTren=25.0
+InpAdxSepi=15.0
+InpRegimeJarakMult=1.60
+InpRegimeTPMult=1.30
+InpPakaiSideways=false
+InpSidewaysLookback=100
+InpSidewaysMinCross=60
+InpSidewaysPakaiAdx=true
+InpPakaiTrailBasket=false
+InpTrailBasketMulai=1.50
+InpTrailBasketJaga=0.60
+InpPakaiHedgePenutup=false
+InpHedgeTriggerMoney=0.60
+InpHedgeLotMult=1.2
+InpHedgeMinProfit=0.10
+InpHedgeStopMoney=3.00
+InpPakaiCooldown=true
+InpCooldownDetikEntry=30
+InpCooldownDetikLayer=15
+InpPakaiNews=true
+InpNewsAksi=3
+InpNewsJedaMenit=30
+InpNewsMinImpact=2
+InpNewsPakaiKalender=true
+InpNewsMataUang=USD,XAU
+InpNewsJamManual=20:30,02:00
+InpNewsJendelaMenit=15
+InpNewsMaxSpreadMult=3.0
+InpNewsPakaiATR=true
+InpNewsATRMult=2.5
+InpNewsCacheDetik=10
+InpNewsATRPeriod=14
+InpMagic=20260916
+InpSlippage=50
+InpMaxSpreadPts=0
+InpTampilkanPanel=true
+InpPakaiFilterArah=true
+InpArahTF=5
+InpArahMaPeriod=50
+InpArahPakaiSlope=true
+InpEntryMode=1
