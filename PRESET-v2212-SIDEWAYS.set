@@ -1,0 +1,94 @@
+; ============================================================
+;  PRESET v2.21.2  "SIDEWAYS"  (adopsi IronGrid Hedge V5.1)
+;  Butuh EA: PabloLayerEA_v2.21.2-sideways.mq5
+;
+;  FILTER BARU: entry basket BARU hanya saat pasar SIDEWAYS.
+;  Pasar TREN -> entry baru DITAHAN (posisi lama tetap dikelola).
+;  Ini yang mencegah "rugi nambah terus" saat harga tren lurus.
+;
+;  Cek F7->Inputs:
+;    InpPakaiSideways  HARUS true
+;    InpMaxEquityDD    HARUS 8.0
+;    InpBasketCLMoney  HARUS 4.0
+; ============================================================
+InpLotAwal=0.01
+InpLotCustom=0.00
+InpMaxLayer=4
+InpMaxLot=0.03
+InpJarakLayer=1.50
+InpAktifBuy=true
+InpAktifSell=true
+InpHanyaJikaKosong=false
+InpNoHedge=false
+InpTPAdaptif=true
+InpTPMin=0.50
+InpTPMax=2.00
+InpTPATRMult=1.00
+InpTakeProfit=1.0
+InpPakaiBasketTP=true
+InpBasketTPMoney=1.00
+InpStopLoss=1.50
+InpPakaiBasketCL=true
+InpBasketCLMoney=4.00
+InpPakaiEquityCL=true
+InpMaxEquityDD=8.0
+InpTargetHarian=0.0
+InpGunakanBEP=true
+InpBEPTrigger=1.0
+InpBEPLock=0.30
+InpGunakanTrailing=true
+InpTrailStart=1.5
+InpTrailStep=0.5
+InpGunakanEMAFilter=false
+InpEmaCepat=10
+InpEmaLambat=20
+InpTFEMA=1
+InpCandleTF=1
+InpCandleMin=0.02
+InpCandleMax=0.0
+InpCandleSkipNews=false
+InpShowLevel=true
+InpTampilkanGaris=true
+InpOneShotLadder=false
+InpTargetPersen=false
+InpPakaiJamLock=false
+InpPakaiChase=true
+InpChaseTrigger=2.0
+InpChaseMaxUlang=0
+InpPakaiRegime=true
+InpAdxTren=25.0
+InpAdxSepi=15.0
+InpRegimeJarakMult=1.60
+InpRegimeTPMult=1.30
+InpPakaiSideways=true
+InpSidewaysLookback=100
+InpSidewaysMinCross=100
+InpSidewaysPakaiAdx=true
+InpPakaiTrailBasket=true
+InpTrailBasketMulai=1.00
+InpTrailBasketJaga=0.40
+InpPakaiHedgePenutup=true
+InpHedgeTriggerMoney=0.60
+InpHedgeLotMult=1.2
+InpHedgeMinProfit=0.10
+InpHedgeStopMoney=2.00
+InpPakaiCooldown=true
+InpCooldownDetikEntry=30
+InpCooldownDetikLayer=20
+InpPakaiNews=true
+InpNewsAksi=3
+InpNewsJedaMenit=30
+InpNewsMinImpact=2
+InpNewsPakaiKalender=true
+InpNewsMataUang=USD,XAU
+InpNewsJamManual=20:30,02:00
+InpNewsJendelaMenit=15
+InpNewsMaxSpreadMult=3.0
+InpNewsPakaiATR=true
+InpNewsATRMult=2.5
+InpNewsCacheDetik=10
+InpNewsATRPeriod=14
+InpMagic=20260916
+InpSlippage=50
+InpMaxSpreadPts=0
+InpTampilkanPanel=true
