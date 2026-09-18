@@ -1,0 +1,105 @@
+; ============================================================
+;  PRESET v2.21.2  "AGRESIF-RASIO-v2"  (ANTI-MARTINGALE)
+;  Butuh EA: PabloLayerEA_v2.21.2-sideways.mq5
+;
+;  AKAR MASALAH (dari data nyata 18 Sep):
+;   EA buka 5 SELL sekaligus (lot 0.01->0.02->0.03->0.04->0.05) saat
+;   harga naik kencang -> 3 loss sekaligus (-6.51, -4.26, -2.00).
+;   = martingale grid lawan tren.
+;
+;  PERBAIKAN:
+;   - InpMaxLayer 12 -> 3           (batasi numpuk)
+;   - InpOneShotLadder false->true  (1 layer per tick, bukan borongan)
+;   - InpJarakLayer 0.80 -> 1.50    (jangan kelewat rapat)
+;   - InpLotCustom 0.01 -> 0.00     (LOT FLAT 0.01 - berhenti naikin lot)
+;   - InpMaxLot 0.05 -> 0.01        (kunci flat)
+;   - Hedge OFF, Sideways OFF (tetap sering entry)
+;   - Rem basket CL 15 -> 6, Equity DD 25 -> 15
+;
+;  Efek: loss 0.03 (-6.51) jadi ~-2.17 kalau lot flat. Rugi terpangkas.
+;
+;  Cek F7->Inputs (WAJIB manual):
+;    InpMaxLayer = 3 | InpOneShotLadder = true | InpJarakLayer = 1.50
+;    InpLotCustom = 0.00 | InpMaxLot = 0.01
+; ============================================================
+InpLotAwal=0.01
+InpLotCustom=0.00
+InpMaxLayer=3
+InpMaxLot=0.01
+InpJarakLayer=1.50
+InpAktifBuy=true
+InpAktifSell=true
+InpHanyaJikaKosong=false
+InpNoHedge=false
+InpTPAdaptif=true
+InpTPMin=1.00
+InpTPMax=3.00
+InpTPATRMult=1.00
+InpTakeProfit=1.50
+InpPakaiBasketTP=true
+InpBasketTPMoney=2.00
+InpStopLoss=2.00
+InpPakaiBasketCL=true
+InpBasketCLMoney=6.00
+InpPakaiEquityCL=true
+InpMaxEquityDD=15.0
+InpTargetHarian=0.0
+InpGunakanBEP=true
+InpBEPTrigger=1.0
+InpBEPLock=0.30
+InpGunakanTrailing=true
+InpTrailStart=1.5
+InpTrailStep=0.5
+InpGunakanEMAFilter=false
+InpEmaCepat=10
+InpEmaLambat=20
+InpTFEMA=1
+InpCandleTF=1
+InpCandleMin=0.02
+InpCandleMax=0.0
+InpCandleSkipNews=false
+InpShowLevel=true
+InpTampilkanGaris=true
+InpOneShotLadder=true
+InpTargetPersen=false
+InpPakaiJamLock=false
+InpPakaiChase=true
+InpChaseTrigger=2.0
+InpChaseMaxUlang=0
+InpPakaiRegime=true
+InpAdxTren=25.0
+InpAdxSepi=15.0
+InpRegimeJarakMult=1.60
+InpRegimeTPMult=1.30
+InpPakaiSideways=false
+InpSidewaysLookback=100
+InpSidewaysMinCross=60
+InpSidewaysPakaiAdx=true
+InpPakaiTrailBasket=true
+InpTrailBasketMulai=1.50
+InpTrailBasketJaga=0.60
+InpPakaiHedgePenutup=false
+InpHedgeTriggerMoney=0.60
+InpHedgeLotMult=1.2
+InpHedgeMinProfit=0.10
+InpHedgeStopMoney=3.00
+InpPakaiCooldown=true
+InpCooldownDetikEntry=45
+InpCooldownDetikLayer=30
+InpPakaiNews=true
+InpNewsAksi=3
+InpNewsJedaMenit=30
+InpNewsMinImpact=2
+InpNewsPakaiKalender=true
+InpNewsMataUang=USD,XAU
+InpNewsJamManual=20:30,02:00
+InpNewsJendelaMenit=15
+InpNewsMaxSpreadMult=3.0
+InpNewsPakaiATR=true
+InpNewsATRMult=2.5
+InpNewsCacheDetik=10
+InpNewsATRPeriod=14
+InpMagic=20260916
+InpSlippage=50
+InpMaxSpreadPts=0
+InpTampilkanPanel=true
