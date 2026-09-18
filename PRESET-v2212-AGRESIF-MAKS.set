@@ -1,0 +1,102 @@
+; ============================================================
+;  PRESET v2.21.2  "AGRESIF-MAKS"
+;  Butuh EA: PabloLayerEA_v2.21.2-sideways.mq5
+;
+;  MODE: AGRESIF (mumpung DEMO - buat evaluasi cepat)
+;  - Filter sideways DIMATIKAN -> entry jalan walau pasar tren
+;  - Layer 12/arah, jarak 0.80 (rapat), lot custom 0.02
+;  - Cooldown dipercepat
+;  - REM DARURAT TETAP ON (biar kalau jebol, gak MC):
+;      SL 3.00 | Basket CL 15 | Equity DD 25% | Hedge stop 4
+;
+;  !! INI VERSI UJI CEPAT DI DEMO. JANGAN PAKAI DI REAL. !!
+;
+;  Cek F7->Inputs (WAJIB manual, jangan harap Load 100%):
+;    InpMaxLayer        = 12
+;    InpJarakLayer      = 0.80
+;    InpMaxLot          = 0.10
+;    InpPakaiSideways   = false
+;    InpBasketCLMoney   = 15.0
+;    InpMaxEquityDD     = 25.0
+; ============================================================
+InpLotAwal=0.01
+InpLotCustom=0.02
+InpMaxLayer=12
+InpMaxLot=0.10
+InpJarakLayer=0.80
+InpAktifBuy=true
+InpAktifSell=true
+InpHanyaJikaKosong=false
+InpNoHedge=false
+InpTPAdaptif=true
+InpTPMin=0.50
+InpTPMax=2.50
+InpTPATRMult=1.00
+InpTakeProfit=1.0
+InpPakaiBasketTP=true
+InpBasketTPMoney=1.00
+InpStopLoss=3.00
+InpPakaiBasketCL=true
+InpBasketCLMoney=15.00
+InpPakaiEquityCL=true
+InpMaxEquityDD=25.0
+InpTargetHarian=0.0
+InpGunakanBEP=true
+InpBEPTrigger=1.0
+InpBEPLock=0.30
+InpGunakanTrailing=true
+InpTrailStart=1.5
+InpTrailStep=0.5
+InpGunakanEMAFilter=false
+InpEmaCepat=10
+InpEmaLambat=20
+InpTFEMA=1
+InpCandleTF=1
+InpCandleMin=0.02
+InpCandleMax=0.0
+InpCandleSkipNews=false
+InpShowLevel=true
+InpTampilkanGaris=true
+InpOneShotLadder=false
+InpTargetPersen=false
+InpPakaiJamLock=false
+InpPakaiChase=true
+InpChaseTrigger=2.0
+InpChaseMaxUlang=0
+InpPakaiRegime=true
+InpAdxTren=25.0
+InpAdxSepi=15.0
+InpRegimeJarakMult=1.60
+InpRegimeTPMult=1.30
+InpPakaiSideways=false
+InpSidewaysLookback=100
+InpSidewaysMinCross=60
+InpSidewaysPakaiAdx=true
+InpPakaiTrailBasket=true
+InpTrailBasketMulai=1.00
+InpTrailBasketJaga=0.40
+InpPakaiHedgePenutup=false
+InpHedgeTriggerMoney=0.60
+InpHedgeLotMult=1.2
+InpHedgeMinProfit=0.10
+InpHedgeStopMoney=4.00
+InpPakaiCooldown=true
+InpCooldownDetikEntry=20
+InpCooldownDetikLayer=10
+InpPakaiNews=true
+InpNewsAksi=3
+InpNewsJedaMenit=30
+InpNewsMinImpact=2
+InpNewsPakaiKalender=true
+InpNewsMataUang=USD,XAU
+InpNewsJamManual=20:30,02:00
+InpNewsJendelaMenit=15
+InpNewsMaxSpreadMult=3.0
+InpNewsPakaiATR=true
+InpNewsATRMult=2.5
+InpNewsCacheDetik=10
+InpNewsATRPeriod=14
+InpMagic=20260916
+InpSlippage=50
+InpMaxSpreadPts=0
+InpTampilkanPanel=true
